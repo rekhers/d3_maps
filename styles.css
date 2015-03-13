@@ -1,0 +1,50 @@
+#tooltip {
+				-moz-transition: all 0.15s;
+				-o-transition: all 0.15s;
+				-webkit-transition: all 0.15s;
+				transition: all 0.15s;
+				opacity: 0.90;
+				position: absolute;
+				min-width: 60px;
+				height: auto;
+				padding: 10px;
+				background-color: white;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+				-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+				box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+				pointer-events: none;
+			}
+
+			#tooltip.hidden {
+				display: none;
+			}
+
+			#tooltip p {
+				margin: 0;
+				font-family: garamond;
+				font-size: 16px;
+				color:black;
+			}	
+			
+			
+		
+			
+			#heading{
+				text-align:center;
+				font-family:garamond;
+			}
+	
+			.q0-9 { fill:rgb(247,251,255); }
+			.q1-9 { fill:rgb(222,235,247); }
+			.q2-9 { fill:rgb(198,219,239); }
+			.q3-9 { fill:rgb(158,202,225); }
+			.q4-9 { fill:rgb(107,174,214); }
+			.q5-9 { fill:rgb(66,146,198); }
+			.q6-9 { fill:rgb(33,113,181); }
+			.q7-9 { fill:rgb(8,81,156); }
+			.q8-9 { fill:rgb(8,48,107); }
+
+			

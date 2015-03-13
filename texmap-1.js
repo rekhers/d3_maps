@@ -19,7 +19,7 @@ var path = d3.geo.path()
  
 
 //Create SVG element
-var svg = d3.select("#texas-map")
+var svg = d3.select("#texas-map-1")
 			.append("svg")
 			.attr("width", w)
 			.attr("height", h);		
@@ -33,7 +33,7 @@ var svg = d3.select("#texas-map")
 			
 d3.json("data/tx_counties.json", function(json){
 	
-
+	console.log(json);
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
 	   .data(json.features)
@@ -47,7 +47,7 @@ d3.json("data/tx_counties.json", function(json){
 				d3.select("#tooltip")
 				.style("left", (d3.event.pageX) + "px")     
              	.style("top", (d3.event.pageY - 90) + "px")
-				.select("#city-label")	
+				.select("#info-label")	
 				.html("<strong>" + d.properties.COUNTY + "</strong>")
 			d3.select("#tooltip").classed("hidden", false);					  
 				 })
