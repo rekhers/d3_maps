@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+	<script src="http://d3js.org/d3.v3.min.js"></script>	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	
+</head>
+<style>
+
+.county{
+	fill: gray;
+	
+}
+
+
+#maps{
+	border:1px solid black;
+}
+
+#tooltip {
+				-moz-transition: all 0.15s;
+				-o-transition: all 0.15s;
+				-webkit-transition: all 0.15s;
+				transition: all 0.15s;
+				opacity: 0.90;
+				position: absolute;
+				min-width: 60px;
+				height: auto;
+				padding: 10px;
+				background-color: white;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+				-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+				box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+				pointer-events: none;
+			}
+
+			#tooltip.hidden {
+				display: none;
+			}
+
+			#tooltip p {
+				margin: 0;
+				font-family: garamond;
+				font-size: 16px;
+			}	
+			
+			
+			#vt-map{
+				display:inline;
+				padding-left:10%;
+				stroke-width:.1;
+				stroke:gray;
+			}
+			
+			#heading{
+				text-align:center;
+				font-family:garamond;
+			}
+			
+			#tx-map{
+				stroke-width:.5;
+				stroke:black;
+				display:inline;
+			}	
+			
+			.q0-9 { fill:rgb(247,251,255); }
+			.q1-9 { fill:rgb(222,235,247); }
+			.q2-9 { fill:rgb(198,219,239); }
+			.q3-9 { fill:rgb(158,202,225); }
+			.q4-9 { fill:rgb(107,174,214); }
+			.q5-9 { fill:rgb(66,146,198); }
+			.q6-9 { fill:rgb(33,113,181); }
+			.q7-9 { fill:rgb(8,81,156); }
+			.q8-9 { fill:rgb(8,48,107); }
+		
+		
+			#vt-city-map{
+				fill: gray;
+				stroke:black;
+				stroke-width:.5;
+				display:inline;
+			}
+		
+</style>
+
+
+<body>
+
+<div id="container-fluid">
+	<div id="row-fluid">
+		<div id="col-md-8">
+<h1 id="title"> maps with d3.js </h1>
+
+<div id="texas-map-1">
+	<div id="tooltip" class="hidden">
+		<p><span id="info-label"></span></p>
+	</div>
+	
+	<p id="txdesc"> tx map with tooltip </p>
+</div>
+
+
+<script src="data/texmap-1.js"></script>
+</div>
+</div>
+</div>
+</body>
+</html>
