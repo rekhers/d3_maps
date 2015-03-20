@@ -6,8 +6,8 @@ var data;
 
 
 var projection = d3.geo.albers()
-.scale(3000)
-.translate([500, 15]);
+.center([44.2, 72.5])
+.scale([2500]).translate([1500, -1500]);
 
 
 
@@ -30,10 +30,52 @@ var svg = d3.select("#texas-map-1")
 //Load in GeoJSON data
 			
 			
+d3.csv("data/tex-pop-simple.csv", function(data) {
 			
-d3.json("data/tx_counties.json", function(json){
+	d3.json("data/tx_counties.json", function(json){
+		
+
+		for (var i = 0; i < data.length; i++) {
+			
+			var dataCounty = data[i].Name;
+			
+			var dataTotal = data[i].Total;
+			
 	
-	console.log(json);
+			//Find the corresponding state inside the GeoJSON
+			for (var j = 0; j < json.features.length; j++) {
+			
+				var county_name = json.features[j].properties.COUNTY;
+				
+				
+				county_name = county_name.split(" ")
+							  county_name.pop();
+							  
+				county_name = county_name.join(" ");
+				
+					
+				
+				if (dataCounty.toLowerCase() == county_name.toLowerCase()) {
+			
+					//Copy the data value into the JSON
+					
+					var unformat_total = parseInt(dataTotal.replace(/,/g,''));
+					
+					var format_total = dataTotal;
+					
+					
+					json.features[j].properties.format_total = format_total;
+					json.features[j].properties.unformat_total = unformat_total;
+					
+					
+					
+					//Stop looking through the JSON
+					break;
+					
+				}
+			}		
+		}
+		
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
 	   .data(json.features)
@@ -48,7 +90,7 @@ d3.json("data/tx_counties.json", function(json){
 				.style("left", (d3.event.pageX) + "px")     
              	.style("top", (d3.event.pageY - 90) + "px")
 				.select("#info-label")	
-				.html("<strong>" + d.properties.COUNTY + "</strong>")
+				.html("<strong>" + d.properties.COUNTY + '</br>' + "Population: " + d.properties.format_total + "</strong>")
 			d3.select("#tooltip").classed("hidden", false);					  
 				 })
 		 
@@ -58,6 +100,8 @@ d3.json("data/tx_counties.json", function(json){
 				  })
 		
 		});
+		
+	});
 		
  })();
 		

@@ -42,13 +42,13 @@
 			#tooltip p {
 				margin: 0;
 				font-family: garamond;
-				font-size: 16px;
+				font-size: 40px;
 			}	
 			
 			
 			#title{
-				text-align:center;
 				font-size:75;
+;
 			}
 			
 			#heading{
@@ -67,9 +67,6 @@
 				padding-left: 100px;
 			}
 			
-			#infolabel{
-				font-size:50px;
-			}
 			
 			.q0-9 { fill:rgb(247,251,255); }
 			.q1-9 { fill:rgb(222,235,247); }
@@ -94,13 +91,16 @@
 		<div id="col-md-8">
 <h1 id="title"> maps with d3.js </h1>
 
+
+<!-- Texas County Map with name+population tooltip on hover-->
 <div id="texas-map-1">
+	<p id="txdesc"> tx map with tooltip </p>
+	
 	<div id="tooltip" class="hidden">
 		<p><span id="info-label"></span></p>
 	</div>
 	
 </div>
-	<p id="txdesc"> tx map with tooltip </p>
 
 
 <script src="data/texmap-1.js"></script>
