@@ -7,7 +7,7 @@ var data;
 
 var projection = d3.geo.albers()
 .center([44.2, 72.5])
-.scale([2500]).translate([1500, -1600]);
+.scale([2500]).translate([1600, -1600]);
 
 
 
