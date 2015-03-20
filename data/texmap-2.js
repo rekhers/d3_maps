@@ -7,7 +7,7 @@ var data;
 
 var projection = d3.geo.albers()
 .center([44.2, 72.5])
-.scale([2500]).translate([1500, -1620]);
+.scale([2500]).translate([1500, -1600]);
 
 
 
@@ -19,10 +19,15 @@ var path = d3.geo.path()
  
 
 //Create SVG element
-var svg = d3.select("#texas-map-1")
+var svg = d3.select("#texas-map-2")
 			.append("svg")
 			.attr("width", w)
 			.attr("height", h);		
+
+		var quantize = d3.scale.quantize()
+		    .domain([0, 100000])
+		    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+			
 			
 d3.csv("data/tex-pop-simple.csv", function(data) {
 			
@@ -77,21 +82,10 @@ d3.csv("data/tex-pop-simple.csv", function(data) {
 	   .append("path")				
    		.attr("class", "county")
 	    .attr("d", path)
-		
-
-		.on("mouseover", function(d){
-				d3.select("#tooltip")
-				.style("left", (d3.event.pageX) + "px")     
-             	.style("top", (d3.event.pageY - 90) + "px")
-				.select("#info-label")	
-				.html("<strong>" + d.properties.COUNTY + '</br>' + "Population: " + d.properties.format_total + "</strong>")
-			d3.select("#tooltip").classed("hidden", false);					  
-				 })
-		 
-			.on("mouseout", function() {
-			d3.select("#tooltip").classed("hidden", true);
-								
-				  })
+	
+				  
+     		 .attr("class", function(d) { return quantize(d.properties.unformat_total); })
+				  
 		
 		});
 		

@@ -3,16 +3,11 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	
 </head>
 
-<!-- styles are temporarily here -->
+<!-- styles are temporarily  -->
 <style>
 
-.county{
-	fill: gray;
-	
-}
 
 
 #tooltip {
@@ -43,35 +38,42 @@
 				margin: 0;
 				font-family: garamond;
 				font-size: 40px;
-			}	
-			
-			
+			}
+
+
 			#title{
 				font-size:75px;
 				margin-left:5%;
+				color:#FFF;
 ;
 			}
 			
+			.jumbotron{
+				background-color:gray;
+			}
+
 			#heading{
 				text-align:center;
 				font-family:garamond;
 			}
-			
+
+
 			#texas-map-1{
-				stroke-width:.5;
-				stroke:white;
+				fill:black;
+				stroke-width:2;
+				stroke:#FFF;
 				display:inline;
-			}	
-			
+			}
+
 			.map-desc{
 				font-size:30px;
-				text-align:right;
-				margin-right:20%;
-				margin-bottom:0%;
-				margin-top:10%;
+				text-align:left;
+				margin-left:10%;
+				margin-top:5%;
+				padding-bottom:2%;
 			}
-			
-			
+
+
 			.q0-9 { fill:rgb(247,251,255); }
 			.q1-9 { fill:rgb(222,235,247); }
 			.q2-9 { fill:rgb(198,219,239); }
@@ -81,10 +83,15 @@
 			.q6-9 { fill:rgb(33,113,181); }
 			.q7-9 { fill:rgb(8,81,156); }
 			.q8-9 { fill:rgb(8,48,107); }
-		
-		
 
-		
+
+			#texas-map-2{
+				stroke: gray;
+			}
+			#texas-map-3{
+							stroke: gray;
+						}
+
 </style>
 
 
@@ -92,13 +99,15 @@
 
 <div id="container-fluid">
 	<div id="row-fluid">
-		<div id="col-md-8">
+		<div id="col-md-12">
+			
+<div class="jumbotron">			
 <h1 id="title"> maps with d3.js </h1>
-
+</div>
 
 <!-- Texas County Map with name+population tooltip on hover-->
 <div id="texas-map-1">
-	<p id="txdesc" class="map-desc"> tx map with tooltip </p>
+	<p id="txdesc" class="map-desc"> Texas Population by County Tooltip </p>
 	
 	<div id="tooltip" class="hidden">
 		<p><span id="info-label"></span></p>
@@ -107,7 +116,21 @@
 </div>
 
 
+<div id="texas-map-2">
+	<p id="txdescquant" class="map-desc"> Texas Population Quantized Choropleth</p>
+	
+</div>
+
+<div id="texas-map-3">
+	<p id="txdescthresh" class="map-desc"> Texas Population Choropleth with Threshold Scale</p>
+	
+</div>
+
+
 <script src="data/texmap-1.js"></script>
+<script src="data/texmap-2.js"></script>
+<script src="data/texmap-3.js"></script>
+
 </div>
 </div>
 </div>
