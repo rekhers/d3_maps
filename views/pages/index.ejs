@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 
-<!-- styles are temporarily  -->
+<!-- styles are temporarily here until I find a fix to include it externally -->
 <style>
 
 
@@ -62,15 +62,14 @@
 				fill:black;
 				stroke-width:2;
 				stroke:#FFF;
-				display:inline;
 			}
 
 			.map-desc{
 				font-size:30px;
 				text-align:left;
-				margin-left:10%;
-				margin-top:5%;
-				padding-bottom:2%;
+				font-family:garamond;
+				font-weight:bold;
+				margin-top:10%;
 			}
 
 
@@ -88,9 +87,25 @@
 			#texas-map-2{
 				stroke: gray;
 			}
+			
+			
 			#texas-map-3{
-							stroke: gray;
+				stroke: gray;
 						}
+		
+			
+			.map{
+				margin-left: 20%;
+			}
+			
+			#wadesc{
+				margin-bottom:-5%;
+			}
+			
+			#wa-map{
+				stroke-width:2;
+				stroke:#FFF;
+			}
 
 </style>
 
@@ -106,8 +121,8 @@
 </div>
 
 <!-- Texas County Map with name+population tooltip on hover-->
-<div id="texas-map-1">
-	<p id="txdesc" class="map-desc"> Texas Population by County Tooltip </p>
+<div id="texas-map-1" class="map">
+	<p id="txdesc" class="map-desc"> <strong> Texas Population by County Tooltip </strong> </p>
 	
 	<div id="tooltip" class="hidden">
 		<p><span id="info-label"></span></p>
@@ -116,20 +131,31 @@
 </div>
 
 
-<div id="texas-map-2">
+<div id="texas-map-2" class="map">
 	<p id="txdescquant" class="map-desc"> Texas Population Quantized Choropleth</p>
 	
 </div>
 
-<div id="texas-map-3">
+<div id="texas-map-3" class="map">
 	<p id="txdescthresh" class="map-desc"> Texas Population Choropleth with Threshold Scale</p>
 	
 </div>
 
 
+<div id="wa-map" class="map">
+	<p id="wadesc" class="map-desc"> Washington County Map with Tooltip </p>
+	
+	<div id="tooltip" class="hidden">
+		<p><span id="info-label"></span></p>
+	</div>
+	
+</div>
+
 <script src="data/texmap-1.js"></script>
 <script src="data/texmap-2.js"></script>
 <script src="data/texmap-3.js"></script>
+<script src="data/wa-map.js"></script>
+
 
 </div>
 </div>

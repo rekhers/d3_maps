@@ -1,22 +1,8 @@
 (function(){
 
-var w = 1000;
-var h = 500;
-var data;
+var w = 600;
+var h = 600;
 
-
-var projection = d3.geo.albers()
-.center([44.2, 72.5])
-.scale([2500]).translate([1550, -1600]);
-
-
-
-//Define path generator
-var path = d3.geo.path()
-.projection(projection);
-
-
- 
 
 //Create SVG element
 var svg = d3.select("#texas-map-2")
@@ -75,6 +61,26 @@ d3.csv("data/tex-pop-simple.csv", function(data) {
 			}		
 		}
 		
+		var projection = d3.geo.albers()
+		.scale([1]).translate([0, 0]);
+
+
+
+		//Define path generator
+		var path = d3.geo.path()
+		.projection(projection);
+
+
+	var b = path.bounds(json),
+	    s = .95 / Math.max((b[1][0] - b[0][0]) / w, (b[1][1] - b[0][1]) / h),
+	    t = [(w - s * (b[1][0] + b[0][0])) / 2, (h - s * (b[1][1] + b[0][1])) / 2];
+
+	// Update the projection to use computed scale & translate.
+	projection
+	    .scale(s)
+	    .translate(t);
+		
+
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
 	   .data(json.features)
