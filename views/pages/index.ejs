@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
-	<script src="http://d3js.org/d3.v3.min.js"></script>	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
@@ -107,6 +110,11 @@
 				stroke:#FFF;
 			}
 
+			#worldMap{
+
+				margin-left: 25%;
+			}
+
 </style>
 
 
@@ -151,11 +159,17 @@
 	
 </div>
 
+
+<div id="worldMap">
+	</div>
+	
+</div>
+
 <script src="data/texmap-1.js"></script>
 <script src="data/texmap-2.js"></script>
 <script src="data/texmap-3.js"></script>
 <script src="data/wa-map.js"></script>
-
+<script src="data/worldMap.js"></script>
 
 </div>
 </div>
