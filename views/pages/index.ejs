@@ -1,121 +1,14 @@
 <!DOCTYPE html>
-<!-- here's a quick testtttt!--> 
 <head>
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="data/stylesheet.css"/>
 </head>
-
-<!-- styles are temporarily here until I find a fix to include it externally -->
-<style>
-
-
-#tooltip {
-				-moz-transition: all 0.15s;
-				-o-transition: all 0.15s;
-				-webkit-transition: all 0.15s;
-				transition: all 0.15s;
-				opacity: 0.90;
-				position: absolute;
-				min-width: 60px;
-				height: auto;
-				padding: 10px;
-				background-color: white;
-				-webkit-border-radius: 5px;
-				-moz-border-radius: 5px;
-				border-radius: 5px;
-				-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-				-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-				box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-				pointer-events: none;
-			}
-
-			#tooltip.hidden {
-				display: none;
-			}
-
-			#tooltip p {
-				margin: 0;
-				font-family: garamond;
-				font-size: 40px;
-			}
-
-
-			#title{
-				font-size:75px;
-				margin-left:5%;
-				color:#FFF;
-;
-			}
-			
-			.jumbotron{
-				background-color:gray;
-			}
-
-			#heading{
-				text-align:center;
-				font-family:garamond;
-			}
-
-
-			#texas-map-1{
-				fill:black;
-				stroke-width:2;
-				stroke:#FFF;
-			}
-
-			.map-desc{
-				font-size:30px;
-				text-align:left;
-				font-family:garamond;
-				font-weight:bold;
-				margin-top:10%;
-			}
-
-
-			.q0-9 { fill:rgb(247,251,255); }
-			.q1-9 { fill:rgb(222,235,247); }
-			.q2-9 { fill:rgb(198,219,239); }
-			.q3-9 { fill:rgb(158,202,225); }
-			.q4-9 { fill:rgb(107,174,214); }
-			.q5-9 { fill:rgb(66,146,198); }
-			.q6-9 { fill:rgb(33,113,181); }
-			.q7-9 { fill:rgb(8,81,156); }
-			.q8-9 { fill:rgb(8,48,107); }
-
-
-			#texas-map-2{
-				stroke: gray;
-			}
-			
-			
-			#texas-map-3{
-				stroke: gray;
-						}
-		
-			
-			.map{
-				margin-left: 20%;
-			}
-			
-			#wadesc{
-				margin-bottom:-5%;
-			}
-			
-			#wa-map{
-				stroke-width:2;
-				stroke:#FFF;
-			}
-
-			#worldMap{
-
-				margin-left: 25%;
-			}
-
-</style>
 
 
 <body>
@@ -126,6 +19,24 @@
 			
 <div class="jumbotron">			
 <h1 id="title"> maps with d3.js </h1>
+</div>
+
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+  	Choose a map
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#texas-map-1">Texas Pop w/ Tooltip</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#texas-map-2">Texas Pop Quantized Chloropleth</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#texas-map-3">Texas Pop</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#wa-map"> WA Counties </a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#worldMap"> World Map </a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#rotatingEarth"> Rotating Earth </a></li>
+
+
+  </ul>
 </div>
 
 <!-- Texas County Map with name+population tooltip on hover-->
@@ -162,15 +73,18 @@
 
 <div id="worldMap">
 	</div>
+
+
+	<div id="rotatingEarth">
+	</div>
 	
-</div>
 
 <script src="data/texmap-1.js"></script>
 <script src="data/texmap-2.js"></script>
 <script src="data/texmap-3.js"></script>
 <script src="data/wa-map.js"></script>
 <script src="data/worldMap.js"></script>
-
+<script src="data/rotatingEarth.js"></script>
 </div>
 </div>
 </div>

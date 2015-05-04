@@ -1,12 +1,14 @@
 (function (){
 
-       var width = 2000;
-       var height = 3000
+       var width = 5000;
+       var height = 1000;
+
        var projection = d3.geo.kavrayskiy7()
            .center([10, 15])
-           .translate([170, 92])
+           .translate([575, 300])
            .rotate([0, 0])
-           .scale(70);
+           .scale(250);
+
        var path = d3.geo.path()
            .projection(projection);
 
@@ -31,9 +33,9 @@
      // });
 
 
-      countries.forEach(function(d){
-        console.log(d.id);
-      })
+      // countries.forEach(function(d){
+      //   console.log(d.id);
+      // })
 
         ncgMap.selectAll("path")
                .data(topojson.feature(world, world.objects.countries).features)
